@@ -1,0 +1,20 @@
+
+
+
+<div class="d-flex flex-lg-row  flex-md-row flex-sm-row flex-wrap   justify-content-sm-center  gap-lg-3 gap-md-2  m-lg-4 ">
+
+  @for (item of courses; track item.id) {
+    <course-card
+      [course]="item"
+      (courseSelected)="onCourseSelected($event)"
+      [class.is-first]="$first"
+      [class.is-last]="$last"
+
+    />
+  } @empty {
+    <div class="alert alert-warning w-75 text-center" role="alert">
+        No courses availaible , try to add some
+    </div>
+  }
+
+</div>

@@ -1,0 +1,12 @@
+
+<div class="card " style="width: 30rem;">
+  <img [src]="course.iconUrl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center"> {{course.description}}</h5>
+    <p class="card-text text-center"> {{course.longDescription}}</p>
+    <div class="d-flex justify-content-center ">
+      <a (click)="onCourseViewed()" class="btn btn-primary text-center">View Course</a>
+    </div>
+
+  </div>
+</div>

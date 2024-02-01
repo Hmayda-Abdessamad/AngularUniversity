@@ -1,0 +1,9 @@
+course-card.is-first {
+  border-top: 2px solid black ;
+  padding-top: 5px;
+}
+
+course-card.is-last{
+  border-bottom: 2px solid black ;
+  padding-bottom: 5px;
+}
