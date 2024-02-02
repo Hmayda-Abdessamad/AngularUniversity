@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {COURSES} from "../../db-data";
 import {CourseCardComponent} from "../course-card/course-card.component";
 import {Course} from "../model/course";
+import {first} from "rxjs/operators";
 
 @Component({
   selector: 'courses',
@@ -19,4 +20,6 @@ export class CoursesComponent {
   onCourseSelected(course:Course) {
     console.log("we can view the "+course.description+"from the parent componant");
   }
+
+    protected readonly first = first;
 }
