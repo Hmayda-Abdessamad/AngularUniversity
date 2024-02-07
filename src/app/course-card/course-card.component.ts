@@ -20,4 +20,10 @@ export class CourseCardComponent {
     this.courseSelected.emit(this.course)
   }
 
+  CardClasses(){
+    if(this.course.category.toLowerCase()=="beginner"){
+      return 'beginner';
+    }
+  }
+
 }

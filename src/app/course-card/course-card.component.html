@@ -1,17 +1,31 @@
 
-<div class="card " style="width: 30rem;">
-  @if (course.iconUrl){
+<div class=" card h-100 d-flex align-items-stretch " [ngClass]="CardClasses()" style="width: 20rem;" >
+
+  @if (course.iconUrl) {
     <img [src]="course.iconUrl" class="card-img-top" alt="...">
   } @else {
     <img src="assets/empty-image.png" class="card-img-top" alt="...">
   }
 
-  <div class="card-body">
-    <h5 class="card-title text-center"> {{course.description}}</h5>
-    <p class="card-text text-center"> {{course.longDescription}}</p>
-    <div class="d-flex justify-content-center ">
-      <a (click)="onCourseViewed()" class="btn btn-primary text-center">View Course</a>
-    </div>
+  <div class="card-body ">
 
+    <h5  class="card-title text-center" [style.text-decoration]="'underline'" [ngStyle]="{color: 'green'}" > {{course.description}}</h5>
+    <p class="card-text text-center"> {{course.longDescription}}</p>
+
+
+
+    <span *ngIf="course.lessonsCount ; else pas_de_lesson"  class="position-absolute lessons top-0 start-50 translate-middle badge rounded-pill  text-white">
+    {{course.lessonsCount}}
+    </span>
+
+    <ng-template #pas_de_lesson>
+        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill lessons ">
+      pas de lesson
+      </span>
+    </ng-template>
+
+  </div>
+  <div class="d-flex justify-content-center bg-warning ">
+    <a (click)="onCourseViewed()" class="btn text-white text-center">View Course</a>
   </div>
 </div>

@@ -5,4 +5,7 @@ body {
   margin: 5px;
   font-family: 'Roboto', sans-serif;
   width: 100vw;
+  background-color: #240046;
+  overflow-x: hidden;
+  overflow-y:scroll;
 }

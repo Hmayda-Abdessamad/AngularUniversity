@@ -1,7 +1,7 @@
 
 
 
-<div class="d-flex flex-lg-row  flex-md-row flex-sm-row flex-wrap   justify-content-sm-center  gap-lg-3 gap-md-2  m-lg-4 ">
+<div class="d-flex  courses flex-wrap  align-items-stretch  justify-content-center  gap-3  m-5 p-3  ">
 
   @for (item of courses; track item.id) {
     <course-card
@@ -9,6 +9,7 @@
       (courseSelected)="onCourseSelected($event)"
       [class.is-first]="$first"
       [class.is-last]="$last"
+
 
     />
   } @empty {
