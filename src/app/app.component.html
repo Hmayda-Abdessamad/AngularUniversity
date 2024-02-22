@@ -3,9 +3,23 @@
     <img class="logo"  alt="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 </div>
 
+<h1 class="text-white text-center ">title :{{ title | titlecase}}</h1>
+<h1 class="text-white text-center ">Date :{{ date | date:"MMM/dd/yyyy"}}</h1>
+<h1 class="text-white text-center ">price :{{ price  | currency:"EUR"}}</h1>
+<h1 class="text-white text-center ">price :{{ rate  | percent}}</h1>
 
+<!--
+for slicing
+{{ courses | slice:0:1 | json }}
+{{ courses | slice:1:2 | json }}
 
+for key value pair
+<div *ngfor="let pair of courses[0] | keyvalue">
+{{ pair.key + ' : '}}{{ pair.value}}
 
+</div>
+
+-->
 <courses ></courses>
 
 
