@@ -44,6 +44,7 @@
     }
   </div>
   <div class="d-flex justify-content-center bg-warning ">
-    <a (click)="onCourseViewed()" class="btn text-white text-center">View Course</a>
+    <a (click)="editCourse(courseTitle.value)" class="btn text-white text-center">Edit Course</a>
+    <input #courseTitle [value]="course.description" />
   </div>
 </div>

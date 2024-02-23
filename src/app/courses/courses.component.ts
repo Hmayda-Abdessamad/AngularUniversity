@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 import {AsyncPipe, CommonModule} from '@angular/common';
 import {CourseCardComponent} from "../course-card/course-card.component";
 import {Course} from "../model/course";
-import {first} from "rxjs/operators";
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {environment} from '../../environments/environment.prod';
-import {Observable} from 'rxjs';
+import {CoursesService} from '../services/courses.service';
+
 
 @Component({
   selector: 'courses',
@@ -16,19 +14,22 @@ import {Observable} from 'rxjs';
 })
 export class CoursesComponent {
 
-  params:HttpParams=new HttpParams().set("page","1").set("pageSize","10");
-
-  courses$:Observable<Course[]>=this.http.get<Course[]>(environment.backendURL+"/courses",{params:this.params});
+  constructor(private coursesService:CoursesService) {
 
 
+  }
 
-  constructor(private http:HttpClient) {
+  courses$=this.coursesService.getCourses("1","10")
+
+  onCourseEdit(course:Course) {
+   this.coursesService.saveCourse(course).subscribe()
+
   }
 
 
-  onCourseSelected(course:Course) {
-    console.log("we can view the "+course.description+"from the parent componant");
-  }
 
-    protected readonly first = first;
+
+
+
+
 }

@@ -14,10 +14,10 @@ export class CourseCardComponent {
   @Input({required:true})
   course:Course;
   @Output()
-  courseSelected=new EventEmitter<Course>()
+  courseEdit=new EventEmitter<Course>()
 
-  onCourseViewed() {
-    this.courseSelected.emit(this.course)
+  editCourse(description:string) {
+    this.courseEdit.emit({...this.course,description})
   }
 
   CardClasses(){

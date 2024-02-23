@@ -7,7 +7,7 @@
   @for (item of (courses$ | async) ; track item.id) {
     <course-card
       [course]="item"
-      (courseSelected)="onCourseSelected($event)"
+      (courseEdit)="onCourseEdit($event)"
       [class.is-first]="$first"
       [class.is-last]="$last"
 
