@@ -4,7 +4,7 @@
 <div class="d-flex  courses flex-wrap  align-items-stretch  justify-content-center  gap-3  m-5 p-3  ">
 
 
-  @for (item of courses; track item.id) {
+  @for (item of (courses$ | async) ; track item.id) {
     <course-card
       [course]="item"
       (courseSelected)="onCourseSelected($event)"
